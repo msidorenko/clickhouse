@@ -36,7 +36,7 @@ func (m Migrator) FullDataTypeOf(field *schema.Field) (expr clause.Expr) {
 	expr.SQL = m.Migrator.DataTypeOf(field)
 
 	// NOTE:
-	// NULL and UNIQUE keyword is not supported in clickhouse.
+	// NULL as nullable
 	// Hence, skipping checks for field.Unique and field.NotNull
 
 	// Build DEFAULT clause after DataTypeOf() expression optionally
